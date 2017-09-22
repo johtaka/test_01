@@ -59,7 +59,7 @@ def losscut_cross(pair, exchange_rate, lot , leverage, equity):
     while True:
         losscut = losscut - float(0.01)
         if float(losscut_rate) > ( int(equity) - (( float(exchange_rate) - float(losscut)) * int(lot) * 1000 * getrate('1', 'bid')  )) / (float(losscut) * int(lot) / int(leverage)) * getrate('1', 'bid') * 100 :
-            print ('losscut rate is' + str(losscut) )
+            print ('If rate will be less than ' + str(losscut) + ', You will encounter loss cut.')
             break        
 
 print('which pair? default:1', pairs)
